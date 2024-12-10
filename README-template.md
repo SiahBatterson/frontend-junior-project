@@ -1,6 +1,6 @@
 # Frontend Mentor - Age calculator app solution
 
-This is a solution to the [Age calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Age calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -11,12 +11,7 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -37,83 +32,106 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./responsive1.png)
+![](./responsive2.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/SiahBatterson/frontend-junior-project]
+- Live Site URL: [https://siahbatterson.github.io/frontend-junior-project/]
 
 ## My process
+
+My process is always to start with laying everything out first. I like getting styling done in CSS to get an approximate mark up of what it might look like so as I build out the app I can see how a user might interact with it. First I did the HTML, then the CSS, and then I implimented the js using the date functions and constructors in js.
+
+It was straightforward from there making the calculations and then having it check for errors and then adding media queries so that the app would be responsive on web.
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Java Script
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+One of the peices that was cruciual to my responsive design for mobile was the media queries.
 
-To see how you can add code snippets, see below:
+```css
+@media only screen and (max-width: 720px) {
+  .input-group input {
+    width: 60px;
+    padding: 10px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .container {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+    max-width: 90%;
+  }
+  .line {
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    height: 2px;
+    background-color: #333;
+  }
+
+  .button-line-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+```
+
+It was crucial to have everthing laid out correctly in a flex container so that it would work correctly.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="container">
+  <form id="date-form">
+    <div class="form-group">
+      <div class="input-group">
+        <label for="day">Day</label>
+        <input type="number" id="day" placeholder="DD" />
+      </div>
+      <div class="input-group">
+        <label for="month">Month</label>
+        <input type="number" id="month" placeholder="MM" />
+      </div>
+      <div class="input-group">
+        <label for="year">Year</label>
+        <input type="number" id="year" placeholder="YYYY" />
+      </div>
+    </div>
+    <div class="button-line-container">
+      <div class="line"></div>
+      <button type="submit">↓</button>
+    </div>
+  </form>
+  <div class="result">
+    <p><span id="years">--</span> years</p>
+    <p><span id="months">--</span> months</p>
+    <p><span id="days">--</span> days</p>
+  </div>
+</div>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+
+I also kept struggling with the form and buttons resseting itself and a helpful peice of code I came across while problem solving is the porevent default function for inputs.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  calculateAge();
+});
+};
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- [CSS flexbox styling guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-tricks) - Flex boxes continiue to stump me but this guide seemed to be very helpful for underastanding them on a more fundamental level.
+- [Debugging tips](https://www.youtube.com/watch?v=ndeClnyHSo8) - This video was helpful in learning helpful ways to debug especially using the style section of the dev tools.

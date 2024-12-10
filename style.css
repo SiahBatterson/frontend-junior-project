@@ -23,9 +23,11 @@ body {
 }
 
 .line {
-  width: 100px; /* Length of the line */
-  height: 2px; /* Thickness of the line */
-  background-color: #333; /* Line color */
+  width: 350px;
+  margin: 0;
+  padding: 0;
+  height: 2px;
+  background-color: #333;
 }
 
 .button-line-container {
@@ -79,7 +81,7 @@ button {
   border: none;
   cursor: pointer;
   height: 45px;
-  width: 30%;
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +95,9 @@ button:hover {
 }
 
 .result {
-  margin-top: 20px;
+  margin-top: 0px;
+  padding-top: 0;
+  margin-bottom: 10px;
 }
 
 .result p {
@@ -135,5 +139,20 @@ button:hover {
     margin-bottom: 10px;
     width: 200px;
     max-width: 90%;
+  }
+  .line {
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    height: 2px;
+    background-color: #333;
+  }
+
+  .button-line-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
   }
 }
